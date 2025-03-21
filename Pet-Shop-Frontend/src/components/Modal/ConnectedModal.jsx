@@ -11,7 +11,7 @@ function ConnectedModal() {
     dispatch(closeModal());
   };
 
-  // Check that modal.content exists and is an array
+ 
   const content = Array.isArray(modal.content) ? modal.content : [];
 
   return (

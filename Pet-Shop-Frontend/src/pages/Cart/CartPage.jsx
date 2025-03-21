@@ -93,7 +93,7 @@ function CartPage() {
       })
       .then((response) => {
        
-        console.log("Order placed successfully:", response.data);
+       
         dispatch(
           openModal({
             title: "Congratulations!",

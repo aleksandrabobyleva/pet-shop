@@ -128,7 +128,7 @@ function DiscountForm() {
               </div>
               <div className={styles.formGroup}>
                 <label>
-                  <input 
+                  <input
                     type="tel"
                     value={phone}
                     placeholder="Phone number"
@@ -162,7 +162,7 @@ function DiscountForm() {
               </div>
               <GetDiscountButton
                 onClick={handleSubmit}
-                disabled={!isFormValid() || isSubmitting || isSubmitted }  
+                disabled={!isFormValid() || isSubmitting || isSubmitted}
               />
             </form>
           </div>

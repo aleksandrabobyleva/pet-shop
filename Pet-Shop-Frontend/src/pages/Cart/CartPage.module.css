@@ -127,8 +127,6 @@
   color: var(--color-dark);
 }
 
-/* Order Details -------------------------------------- */
-
 .orderDetails {
   display: flex;
   flex-direction: column;
@@ -173,9 +171,9 @@
 
 .totalPriceSumme {
   position: relative;
-  font-size: 64px;
+  font-size: 50px;
   font-weight: 700;
-  bottom: 18px;
+  bottom: 45px;
   margin-left: 16px;
 }
 
@@ -245,7 +243,6 @@
   color: var(--color-dark-gray);
 }
 
-
 @media (max-width: 767px) {
   .cartItemTitle {
     max-width: 300px;
@@ -262,7 +259,6 @@
 }
 
 @media (max-width: 610px) {
-
   .counterContainer span {
     width: 250px;
   }
@@ -307,7 +303,6 @@
 }
 
 @media (max-width: 430px) {
-
   .discountPrice,
   .originalPriceLarge {
     font-size: 30px;

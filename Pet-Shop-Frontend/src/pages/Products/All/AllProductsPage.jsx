@@ -2,18 +2,18 @@ import { useSearchParams } from "react-router-dom";
 import axios from "axios";
 import { useEffect, useState } from "react";
 
-import Breadcrumbs from '../../../components/Breadcrumbs/Breadcrumbs';
+import Breadcrumbs from "../../../components/Breadcrumbs/Breadcrumbs";
 import ProductCard from "../../../components/ProductCard/ProductCard";
 import Filter from "../../../components/FilterContainer/Filter/Filter";
 import DiscountedItems from "../../../components/FilterContainer/DiscountedItems/DiscountedItems";
 import SelectSort from "../../../components/FilterContainer/SelectSort/SelectSort";
 import styles from "./AllProductsPage.module.css";
-import API_URL from '../../../utils/api';
+import API_URL from "../../../utils/api";
 
 function AllProductsPage() {
   const [searchParams, setSearchParams] = useSearchParams();
   const [products, setProducts] = useState([]);
-  const [sortType, setSortType] = useState(searchParams.get("sortType") || "default");
+  const [sortType, setSortType] = useState("default");
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState(null);
 
@@ -21,9 +21,9 @@ function AllProductsPage() {
     const fetchProducts = async () => {
       setIsLoading(true);
       setError(null);
-
       try {
         const response = await axios.get(`${API_URL}/products/all`);
+        console.log("Fetched products:", response.data);
         setProducts(response.data);
       } catch (error) {
         console.error(error);
@@ -52,6 +52,7 @@ function AllProductsPage() {
 
       return true;
     })
+
     .sort((a, b) => {
       if (sortType === "newest") {
         return new Date(b.createdAt) - new Date(a.createdAt);
@@ -73,33 +74,41 @@ function AllProductsPage() {
   };
 
   if (isLoading) {
-    return (
-      <span class="loader"></span>
-    );
+    return <span style={{ fontSize: "24px" }}> Loading...</span>;
   }
 
-  if (error) return (
-    <div className="errorMessage">{error}</div>
-  );
+  if (error) return <div className="errorMessage">{error}</div>;
 
   return (
     <div className="globalContainer">
       <div className={styles.allProductsPage}>
         <Breadcrumbs
           items={[
-            { path: '/', label: 'Main page' },
-            { path: '/categories', label: 'All products', isActive: true }
+            { path: "/", label: "Main page" },
+            { path: "/categories", label: "All products", isActive: true },
           ]}
         />
+
         <div className={styles.categoriesPageTitle}>
           <h2>All products</h2>
         </div>
         <div className={styles.filterContainer}>
-          <Filter searchParams={searchParams} setSearchParams={setSearchParams} />
-          <DiscountedItems searchParams={searchParams} setSearchParams={setSearchParams} />
+          <Filter
+            searchParams={searchParams}
+            setSearchParams={setSearchParams}
+          />
+          <DiscountedItems
+            searchParams={searchParams}
+            setSearchParams={setSearchParams}
+          />
           <div className={styles.selectSort}>
             <span className={styles.sortTitle}>Sorted</span>
-            <SelectSort sortType={sortType} setSortType={setSortType} searchParams={searchParams} setSearchParams={setSearchParams} />
+            <SelectSort
+              sortType={sortType}
+              setSortType={setSortType}
+              searchParams={searchParams}
+              setSearchParams={setSearchParams}
+            />
           </div>
         </div>
         <div className={styles.productsContainer}>

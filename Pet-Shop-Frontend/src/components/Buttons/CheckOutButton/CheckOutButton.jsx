@@ -1,6 +1,6 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
-import styles from '../CheckOutButton/CheckOutButton.module.css';
+import React from "react";
+import { Link } from "react-router-dom";
+import styles from "../CheckOutButton/CheckOutButton.module.css";
 
 function CheckOutButton() {
   return (

@@ -1,14 +1,17 @@
-import React, { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
-import { useSelector } from 'react-redux';
+import React, { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
+import { useSelector } from "react-redux";
 
-import styles from './Header.module.css';
-import mainLogo from '../../assets/icons/main-logo.svg';
-import cartIcon from '../../assets/icons/cart.svg';
+import styles from "./Header.module.css";
+import mainLogo from "../../assets/icons/main-logo.svg";
+import cartIcon from "../../assets/icons/cart.svg";
 
 function Header() {
   const cartItems = useSelector((state) => state.cart.items);
-  const cartItemsCount = cartItems.reduce((total, item) => total + item.quantity, 0);
+  const cartItemsCount = cartItems.reduce(
+    (total, item) => total + item.quantity,
+    0
+  );
 
   return (
     <header className={styles.Header}>
@@ -20,16 +23,24 @@ function Header() {
           <nav className={styles.navBlock}>
             <ul>
               <li>
-                <Link to="/" className={styles.navLink}>Main Page</Link>
+                <Link to="/" className={styles.navLink}>
+                  Main Page
+                </Link>
               </li>
               <li>
-                <Link to="/categories" className={styles.navLink}>Categories</Link>
+                <Link to="/categories" className={styles.navLink}>
+                  Categories
+                </Link>
               </li>
               <li>
-                <Link to="/products" className={styles.navLink}>All Products</Link>
+                <Link to="/products" className={styles.navLink}>
+                  All Products
+                </Link>
               </li>
               <li>
-                <Link to="/discounted-products" className={styles.navLink}>All Sales</Link>
+                <Link to="/discounted-products" className={styles.navLink}>
+                  All Sales
+                </Link>
               </li>
             </ul>
           </nav>

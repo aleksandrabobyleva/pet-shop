@@ -41,12 +41,12 @@ const DiscountedProductsPage = () => {
     const filterAndSortProducts = () => {
       const minPrice = parseFloat(searchParams.get("minPrice") || "0");
       const maxPrice = parseFloat(searchParams.get("maxPrice") || Infinity);
-      const includeDiscount = searchParams.get("includeDiscount") === "true";
+      // const includeDiscount = searchParams.get("includeDiscount") === "true";
 
       const filtered = products.filter(product => {
         const productPrice = product.discont_price || product.price;
         if (productPrice < minPrice || productPrice > maxPrice) return false;
-        if (includeDiscount && !product.discont_price) return false;
+        // if (includeDiscount && !product.discont_price) return false;
         return true;
       });
 
@@ -71,7 +71,7 @@ const DiscountedProductsPage = () => {
 
   if (isLoading) {
     return (
-      <span class="loader"></span>
+      <span style={{fontSize: "24px"}}>Loading...</span>
     );
   }
 

@@ -40,7 +40,7 @@ const SelectSort = ({ sortType, setSortType, searchParams, setSearchParams }) =>
 
   return (
     <div className={styles.customSelectContainer} ref={selectRef}>
-      <label className={styles.sortType} tabIndex="0">
+      <label className={styles.sortType}>
         <div
           className={`${styles.customSelectHeader} ${isOpen ? styles.open : ''}`}
           onClick={handleToggle}

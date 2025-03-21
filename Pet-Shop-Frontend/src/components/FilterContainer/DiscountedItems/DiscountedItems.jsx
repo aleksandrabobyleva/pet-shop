@@ -1,5 +1,5 @@
-import React from 'react';
-import styles from './DiscountedItems.module.css';
+import React from "react";
+import styles from "./DiscountedItems.module.css";
 
 const DiscountedItems = ({ searchParams, setSearchParams }) => {
   const includeDiscount = searchParams.get("includeDiscount") === "true";

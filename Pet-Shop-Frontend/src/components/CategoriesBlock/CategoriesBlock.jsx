@@ -37,7 +37,7 @@ const CategoriesBlock = () => {
           {categories.slice(0, 4).map((category) => (
             <li key={category.id} className={styles.gridCategoriesItem}>
               <Link to={`/categories/${category.id}`} className={styles.categoryItem}>
-                <img src={`${API_URL}${category.image}`} alt={category.title} className={styles.categoryImage} />
+                <img src={API_URL+category.image} alt={category.title} className={styles.categoryImage} />
                 <h3 className={styles.categoryName}>
                   {category.title}
                 </h3>

@@ -33,11 +33,7 @@ html {
   line-height: 26px;
   color: var(--color-dark);
   font-weight: 500;
-  background-image: url('./assets/images/pet-bg-4.jpg');
-  background-repeat: repeat;
-  background-size: 20%;
-  background-position: top left;
-  background-attachment: fixed;
+
 }
 
 h2 {

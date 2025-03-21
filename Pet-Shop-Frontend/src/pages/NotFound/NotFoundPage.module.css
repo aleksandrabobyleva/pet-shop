@@ -55,12 +55,3 @@
   background-color: var(--color-dark);
   color: var(--color-light);
 }
-
-
-@media (max-width: 1023px) {
-  .image {
-    max-width: 120px;
-    height: auto;
-  }
-}
-

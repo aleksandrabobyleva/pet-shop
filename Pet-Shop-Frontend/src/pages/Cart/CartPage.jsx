@@ -226,14 +226,14 @@ function CartPage() {
                         xmlns="http://www.w3.org/2000/svg">
                         <path
                           d="M18 6L6 18"
-                          stroke="none"
+                          stroke=" #282828"
                           strokeWidth="2"
                           strokeLinecap="round"
                           strokeLinejoin="round"
                         />
                         <path
                           d="M6 6L18 18"
-                          stroke="none"
+                          stroke="#282828"
                           strokeWidth="2"
                           strokeLinecap="round"
                           strokeLinejoin="round"

@@ -1,0 +1,32 @@
+.contentStyle {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: start;
+  color: var(--color-light);
+  position: absolute;
+}
+
+h1 {
+  font-size: 96px;
+  font-weight: 700;
+  line-height: 110px;
+  text-align: left;
+  margin-top: 80px;
+  margin-bottom: 40px;
+}
+
+.mainBgStyle {
+  max-width: 1440px;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 600px;
+  width: 100%;
+  top: 128px;
+  margin: 0 auto;
+  background-image: url("../../assets/images/main-bg.jpg");
+}
+
+ 
+ 
